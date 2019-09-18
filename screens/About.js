@@ -1,15 +1,16 @@
 import React from "react";
 import { Text, View, Button, StyleSheet } from "react-native";
 
-class About extends Component {
+class About extends React.Component {
   state = {};
   render() {
     return (
       <View style={styles.container}>
         <Text>About Component</Text>
-        <Button onPress={this.props.navigations.navigate("Contact")}>
-          Go to Contact
-        </Button>
+        <Button
+          onPress={() => this.props.navigation.navigate("Contact")}
+          title="Go to Contact"
+        />
       </View>
     );
   }
