@@ -3,6 +3,7 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import IconWithBadge from "../icons/IconWithBadge";
 
 import Home from "../screens/Home";
 import About from "../screens/About";
@@ -43,20 +44,27 @@ const TabNavigator = createBottomTabNavigator(
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let IconComponent = Ionicons;
-        let iconName;
+        let iconName, badge;
         if (routeName === "Home") {
           iconName = "md-home";
-          // Sometimes we want to add badges to some icons.
-          // You can check the implementation below.
-          // IconComponent = HomeIconWithBadge;
+          badge = 2;
         } else if (routeName === "About") {
           iconName = `ios-options`;
+          badge = 1;
         } else if (routeName === "Contact") {
           iconName = "md-call";
+          badge = 4;
         }
 
         // You can return any component that you like here!
-        return <IconComponent name={iconName} size={25} color={tintColor} />;
+        return (
+          <IconWithBadge
+            name={iconName}
+            size={25}
+            color={tintColor}
+            badgeCount={badge}
+          />
+        );
       }
     }),
     tabBarOptions: {
