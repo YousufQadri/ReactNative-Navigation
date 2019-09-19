@@ -11,6 +11,7 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 import Home from "../screens/Home";
 import About from "../screens/About";
 import Contact from "../screens/Contact";
+import Login from "../screens/Login";
 
 //STACK Navigator
 
@@ -149,4 +150,10 @@ const DrawerNavigator = createDrawerNavigator(
     drawerType: "slide"
   }
 );
-export default createAppContainer(DrawerNavigator);
+
+const AppNavigator = createStackNavigator({
+  Login: { screen: Login },
+  Home: { screen: DrawerNavigator }
+});
+
+export default createAppContainer(AppNavigator);

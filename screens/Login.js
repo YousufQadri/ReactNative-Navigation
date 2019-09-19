@@ -1,16 +1,15 @@
 import React from "react";
 import { Text, View, Button, StyleSheet } from "react-native";
 
-class Home extends React.Component {
+class Login extends React.Component {
   state = {};
-
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home Component</Text>
+        <Text>Login Page</Text>
         <Button
-          onPress={() => this.props.navigation.navigate("About")}
-          title="Go to About"
+          onPress={() => this.props.navigation.navigate("Home")}
+          title="Log In"
         />
       </View>
     );
@@ -24,4 +23,4 @@ const styles = StyleSheet.create({
     alignItems: "center"
   }
 });
-export default Home;
+export default Login;
