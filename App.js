@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+//Stack
 import AppNavigator from "./routes";
+//Tab
 
 export default function App() {
   return <AppNavigator />;
